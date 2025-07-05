@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+  
+  <div class="container">
+    <!-- Login Section -->
+    <section id="login-section">
+      <h2>Login to Start Quiz</h2>
+      <form id="login-form" autocomplete="off" novalidate>
+        <input type="text" id="name" placeholder="Enter your name" required />
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <input type="tel" id="mobile" placeholder="Enter your mobile number" required maxlength="10" />
+        <button type="submit">Log In</button>
+        <p id="login-error" class="error-msg"></p>
+      </form>
+    </section>
+
+    <!-- Quiz Section -->
+    <header id="quiz-header" class="hide">
+      <h1>Brain Vibe Quiz App</h1>
+      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    </header>
+
+    <section id="quiz-container" class="hide">
+      <div class="quiz-top">
+        <div id="question-number"></div>
+        <div id="timer">Time Left: <span id="time">15</span>s</div>
+      </div>
+      <div id="question"></div>
+      <ul id="options-list"></ul>
+      <button id="next-btn" disabled>Next</button>
+    </section>
+    
+
+    <!-- Result Section -->
+    <section id="result-container" class="hide">
+      <h2>Your Score</h2>
+      <p id="score-text"></p>
+      <button id="retry-btn">Retry Quiz</button>
+    </section>
+
+    <!-- Footer -->
+     <footer>
+      Made By : Prakhar Agrawal
+    </footer>
+  
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #6a11cb, #2575fc, #2af598, #009efd);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 700px;
+  padding: 2rem 2rem 3.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+.quiz-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#question {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  min-height: 60px;
+  line-height: 1.4;
+}
+
+#options-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+#options-list li {
+  background: #e2e8f0;
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  user-select: none;
+  font-size: 1.05rem;
+}
+
+#options-list li:hover:not(.disabled) {
+  background: #cbd5e1;
+  transform: scale(1.03);
+}
+
+#options-list li.correct {
+  background: #34d399;
+  color: white;
+  pointer-events: none;
+  animation: blink-bg 0.4s 2 alternate;
+}
+
+#options-list li.incorrect {
+  background: #f87171;
+  color: white;
+  pointer-events: none;
+}
+
+#options-list li.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:disabled,
+button[disabled] {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: #2563eb;
+  transform: scale(1.04);
+}
+
+.hide {
+  display: none;
+}
+
+#login-section {
+  margin: 2rem 0 1rem 0;
+}
+
+#login-section h2 {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+#login-form input {
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  width: 90%;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+#login-form input:focus {
+  border: 1.5px solid #3b82f6;
+  outline: none;
+}
+
+.error-msg {
+  color: #ef4444;
+  margin-top: 0.5rem;
+  font-size: 0.98rem;
+  min-height: 1.2em;
+}
+
+@keyframes blink-bg {
+  0%   { background: #34d399; }
+  50%  { background: #fbbf24; color: #222; }
+  100% { background: #34d399; }
+}
+
+#result-container {
+  margin-top: 2rem;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: transparent;
+  color: #888;
+  font-size: 1.02rem;
+  letter-spacing: 0.05em;
+  padding: 0.9rem 0 0.2rem 0;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .container {
+  background: rgba(30, 30, 30, 0.88);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+body.dark #options-list li {
+  background: #374151;
+}
+
+body.dark #options-list li:hover:not(.disabled) {
+  background: #4b5563;
+}
+
+body.dark #options-list li.correct {
+  background: #10b981;
+  animation: blink-bg-dark 0.4s 2 alternate;
+}
+
+body.dark #options-list li.incorrect {
+  background: #ef4444;
+}
+
+body.dark button {
+  background: #2563eb;
+}
+
+body.dark button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+
+footer{
+  font-family:Georgia, 'Times New Roman', Times, serif
+  font-style: italic;
+  color: #ef4444;
+  font-weight: bold;
+}
