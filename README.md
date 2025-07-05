@@ -1,35 +1,34 @@
-# Brain Vibe Quiz App 🎯
+# 🧠 Brain Vibe Quiz App
 
-An interactive web-based quiz application built using **HTML, CSS, and JavaScript**. 
+An interactive and fun web-based quiz application to test your brainpower — built using **HTML**, **CSS**, and **JavaScript**.
 
-## 🚀 Features
+## 🚀 Live Demo
 
-- Multiple-choice quiz questions
-- Timer countdown
-- Score calculation
+👉 [Click here to try the app!](https://prakharagrawal123.github.io/Brain-Vibe-Quiz-App/)
+
+## 🎯 Features
+
+- MCQ-based quiz questions
+- Countdown timer for each question
+- Auto score calculation
 - Retry functionality
-- Clean and responsive UI
-
-## 📸 Preview
-Screenshot (quiz app)) <!-- You can add a real screenshot -->
-
-## 🔗 Live Demo
-
-[Click here to try the app!](https://prakharagrawal123.github.io/Brain-Vibe-Quiz-App/)
+- Smooth and responsive UI
+- Simple and lightweight
 
 ## 📁 Tech Stack
 
-- HTML
-- CSS
-- JavaScript
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
 
-## 🧠 Developed By
 
-**Prakhar Agrawal**  
-Aspiring Data Scientist | BCA Student  
-[LinkedIn](https://www.linkedin.com/in/your-profile) | [GitHub](https://github.com/PrakharAgrawal123)
 
----
+## 📌 How to Use
 
-Feel free to customize it! I can help write a polished one too if you want.
+1. Open the [Live Demo](
+## 📌 How to Use
 
+1. Open the [Live Demo][(https://prakharagrawal123.github.io/Brain-Vibe-Quiz-App/]
+2. Click start to begin the quiz
+3. Answer all the questions
+4. View your final score and try again if you want!
